@@ -85,19 +85,20 @@ const HorarioTable = () => {
       const { day, time } = schedule[0];
       const duration = calculateDuration(time);
 
-      if (tableData[day] && tableData[day][time]) {
-        tableData[day][time].push({ name, duration });
-        console.log(tableData[day][time])
-      }
-      
       if (duration > 1) {
         for (let i = 1; i < duration; i++) {
-          const nextSlot = timeSlots[timeSlots.indexOf(time) + i];
+          const nextSlot = timeSlots[timeSlots.indexOf(time) + 2];
+          console.log(nextSlot);
           if (tableData[day] && tableData[day][nextSlot]) {
             tableData[day][nextSlot].push({ name, duration });
           }
         }
       }
+
+      if (tableData[day] && tableData[day][time]) {
+        tableData[day][time].push({ name, duration });
+      }
+      
     });
 
     return (
