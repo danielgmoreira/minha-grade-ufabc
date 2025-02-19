@@ -1,0 +1,153 @@
+/* Estilo geral da tabela */
+.horario-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Faz a tabela rolar horizontalmente em telas pequenas */
+.horario-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* Estiliza cabeçalhos */
+.horario-table th {
+  background-color: #343a40;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Estiliza células */
+.horario-table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: top;
+  height: 60px;
+  min-width: 140px;
+  position: relative;
+  color: black;
+  background-color: white;
+}
+
+/* Contêiner de eventos dentro das células */
+.cell-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+/* Botão de processamento */
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 200px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Estilo do textarea */
+textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+/* Estilo dos eventos */
+.event {
+  display: flex;
+  background-color: #4285F4 !important;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  align-items: center;
+  width: 90%;
+  left: 5%;
+}
+
+/* Efeito hover nos eventos */
+.event:hover {
+  background-color: #3367d6;
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+
+/* Ajuste de altura dos eventos */
+.event[data-duration="1"] { height: 100%; }
+.event[data-duration="2"] { height: 150%; z-index: 10; position: absolute }
+.event[data-duration="3"] { height: 200%; }
+.event[data-duration="4"] { height: 250%; }
+
+/* 🔹 Responsividade */
+@media screen and (max-width: 768px) {
+  .horario-table th, 
+  .horario-table td {
+    font-size: 14px;
+    padding: 10px;
+    min-width: 175px;
+  }
+
+  .event {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .horario-table th, 
+  .horario-table td {
+    font-size: 10px;
+    padding: 5px;
+    min-width: 80px;
+  }
+
+  .event {
+    font-size: 9px;
+    padding: 4px;
+  }
+
+  button {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  textarea {
+    font-size: 10px;
+    padding: 6px;
+  }
+}
